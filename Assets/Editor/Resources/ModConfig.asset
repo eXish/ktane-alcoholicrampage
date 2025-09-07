@@ -22,11 +22,11 @@ MonoBehaviour:
     PDF: https://ktane.timwi.de/PDF/Alcoholic%20Rampage.pdf
 
 
-    Alcoholic Rampage (alcoholicRampageModule) v1.0.1
+    Alcoholic Rampage (alcoholicRampageModule) v1.0.2
 
     Module and Concept by eXish
 
     Twitch Plays supported'
-  version: 1.0.1
+  version: 1.0.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: b48a5d1f871b84546a63384afaabdfed, type: 3}

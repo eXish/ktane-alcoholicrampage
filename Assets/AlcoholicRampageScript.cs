@@ -126,8 +126,11 @@ public class AlcoholicRampageScript : MonoBehaviour {
                 if (bac < targetBac)
                 {
                     processingVideo = true;
-                    video.clip = Application.isEditor ? clips[UnityEngine.Random.Range(1, 4)] : VideoLoader.clips[UnityEngine.Random.Range(1, 4)];
+                    int choice = UnityEngine.Random.Range(1, 4);
+                    video.clip = Application.isEditor ? clips[choice] : VideoLoader.clips[choice];
+                    Debug.Log("Clip " + choice + ": Video clip null? " + (video.clip == null));
                     video.Play();
+                    Debug.Log("Clip " + choice + ": Played video clip");
                     bac += UnityEngine.Random.Range(1, 6);
                     bacText.text = "BAC: 0." + bac.ToString("00");
                     Debug.LogFormat("[Alcoholic Rampage #{0}] That's good scrumpy! You now have a BAC of 0.{1}.", moduleId, bac.ToString("00"));
@@ -147,8 +150,10 @@ public class AlcoholicRampageScript : MonoBehaviour {
                     processingVideo = true;
                     Debug.LogFormat("[Alcoholic Rampage #{0}] You killed {1}! Good job!", moduleId, mercs[chosenMerc]);
                     video.clip = Application.isEditor ? clips[4] : VideoLoader.clips[4];
+                    Debug.Log("Clip 4: Video clip null? " + (video.clip == null));
                     video.Stop();
                     video.Play();
+                    Debug.Log("Clip 4: Played video clip");
                     StartCoroutine(PlayDeathScream(chosenMerc));
                     stage++;
                     if (stage != 3)
